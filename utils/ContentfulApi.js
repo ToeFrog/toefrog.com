@@ -164,7 +164,6 @@ export default class ContentfulApi {
             slug
             description
             tags
-            externalUrl
             body {
               json
               links {
