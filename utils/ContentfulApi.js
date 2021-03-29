@@ -290,6 +290,22 @@ export default class ContentfulApi {
               }
             }
           }
+          author {
+            ... on Person {
+              image {
+                url
+                description
+                width
+                height
+              }
+              name
+              shortBio
+              email
+              twitter
+              twitch
+              github
+            }
+          }
         }
       }
     }`;

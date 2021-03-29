@@ -55,6 +55,9 @@ function renderWebsite(url) {
 }
 
 export default function Author(props) {
+  console.log('Author');
+  console.log(props);
+
   const { author } = props;
   const hasLinks =
     author.twitter ||
@@ -82,7 +85,7 @@ export default function Author(props) {
             <div className={AuthorStyles.author__links}>
               {author.twitter && renderTwitter(author.twitter)}
               {author.twitch && renderTwitch(author.twitch)}
-              {author.gitHub && renderGitHub(author.github)}
+              {author.github && renderGitHub(author.github)}
               {/* {author.websiteUrl && renderWebsite(author.websiteUrl)} */}
             </div>
           )}
