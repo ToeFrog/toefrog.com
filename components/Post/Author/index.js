@@ -57,10 +57,10 @@ function renderWebsite(url) {
 export default function Author(props) {
   const { author } = props;
   const hasLinks =
-    author.twitterUsername ||
-    author.twitchUsername ||
-    author.gitHubUsername ||
-    author.websiteUrl;
+    author.twitter ||
+    author.twitch ||
+    author.github;
+    // author.websiteUrl;
   return (
     <>
       <div className={AuthorStyles.author}>
@@ -80,10 +80,10 @@ export default function Author(props) {
           </p>
           {hasLinks && (
             <div className={AuthorStyles.author__links}>
-              {author.twitterUsername && renderTwitter(author.twitterUsername)}
-              {author.twitchUsername && renderTwitch(author.twitchUsername)}
-              {author.gitHubUsername && renderGitHub(author.gitHubUsername)}
-              {author.websiteUrl && renderWebsite(author.websiteUrl)}
+              {author.twitter && renderTwitter(author.twitter)}
+              {author.twitch && renderTwitch(author.twitch)}
+              {author.gitHub && renderGitHub(author.github)}
+              {/* {author.websiteUrl && renderWebsite(author.websiteUrl)} */}
             </div>
           )}
         </div>
