@@ -9,9 +9,6 @@ import RichTextPageContent from "@components/RichTextPageContent";
 export default function Post(props) {
   const { post } = props;
 
-  console.log("Post");
-  console.log(post.body.links.assets);
-
   return (
     <article className={RichTextPageContentStyles.page}>
       {post.externalUrl && <ExternalUrl url={post.externalUrl} />}

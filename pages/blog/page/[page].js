@@ -36,9 +36,9 @@ export default function BlogIndexPage(props) {
         url={`${Config.pageMeta.blogIndex.url}/page/${currentPage}`}
       />
 
-      {pageContent.heroBanner !== null && (
+      {/* {pageContent.heroBanner !== null && (
         <HeroBanner data={pageContent.heroBanner} />
-      )}
+      )} */}
 
       <ContentWrapper>
         <PageContentWrapper>

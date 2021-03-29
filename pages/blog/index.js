@@ -18,9 +18,6 @@ export default function BlogIndex(props) {
     preview,
   } = props;
 
-  console.log('BlogIndex');
-  console.log(pageContent);
-
   /**
    * This provides some fallback values to PageMeta so that a pageContent
    * entry is not required for /blog

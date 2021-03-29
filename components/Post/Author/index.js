@@ -55,8 +55,6 @@ function renderWebsite(url) {
 }
 
 export default function Author(props) {
-  console.log('Author');
-  console.log(props);
 
   const { author } = props;
   const hasLinks =

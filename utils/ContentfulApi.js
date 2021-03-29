@@ -66,9 +66,6 @@ export default class ContentfulApi {
 
     const response = await this.callContentful(query);
 
-    console.log(`getPageContentBySlug: ${slug}`);
-    console.log(response);
-
     const pageContent = response.data.blogPostCollection.items
       ? response.data.blogPostCollection.items
       : [];
@@ -155,8 +152,6 @@ export default class ContentfulApi {
     const skipMultiplier = page === 1 ? 0 : page - 1;
     const skip = skipMultiplier > 0 ? queryLimit * skipMultiplier : 0;
     
-    console.log(`getPaginatedBlogPosts - queryLimit: ${queryLimit} skip: ${skip}`);
-
     const query = `{
         blogPostCollection(limit: ${queryLimit}, skip: ${skip}, order: date_DESC) {
           total
@@ -370,9 +365,6 @@ export default class ContentfulApi {
     }`;
 
     const response = await this.callContentful(query);
-
-    console.log('getRecentPostList');
-    console.log(response);
 
     const recentPosts = response.data.blogPostCollection.items
       ? response.data.blogPostCollection.items
