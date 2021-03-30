@@ -21,7 +21,7 @@ const socialLinksList = [
   },
   {
     name: "Twitch",
-    url: "https://live.toefrog.com",
+    url: "http://live.toefrog.com",
     ariaLabel: "Join ToeFrog on Twitch",
     svg: <Twitch />,
   },
