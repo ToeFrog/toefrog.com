@@ -6,22 +6,28 @@ export default class ContentfulApi {
    * param: slug (string)
    */
   static async getPageContentBySlug(slug) {
+    console.log('getPageContentBySlug');
+    console.log(slug);
+
     const query = `
     {
-      blogPostCollection(limit: 1, where: {slug: "${slug}"}) {
+      pageContentCollection(limit: 1, where: {slug: "${slug}"}) {
         items {
           sys {
             id
           }
-          heroImage {
-            title
-            description
-            contentType
-            fileName
-            size
-            url
-            width
-            height
+          heroBanner {
+            headline
+            internalLink
+            externalLink
+            ctaText
+            image {
+              url
+              title
+              description
+              width
+              height
+            }
           }
           title
           description
@@ -65,9 +71,8 @@ export default class ContentfulApi {
     }`;
 
     const response = await this.callContentful(query);
-
-    const pageContent = response.data.blogPostCollection.items
-      ? response.data.blogPostCollection.items
+    const pageContent = response.data.pageContentCollection.items
+      ? response.data.pageContentCollection.items
       : [];
 
     return pageContent.pop();
