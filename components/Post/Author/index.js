@@ -55,6 +55,7 @@ function renderWebsite(url) {
 }
 
 export default function Author(props) {
+  console.log(`Author: ${props}`);
 
   const { author } = props;
   const hasLinks =
@@ -77,7 +78,7 @@ export default function Author(props) {
         <div className={AuthorStyles.author__detailsContainer}>
           <h2 className={AuthorStyles.author__name}>{author.name}</h2>
           <p className={AuthorStyles.author__description}>
-            {author.description}
+            {author.shortBio}
           </p>
           {hasLinks && (
             <div className={AuthorStyles.author__links}>
